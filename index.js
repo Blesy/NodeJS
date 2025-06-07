@@ -8,6 +8,9 @@ const port = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  res.send('HealthCheck. API para ejecutar código JavaScript dinámicamente');
+})
 app.post('/execute', (req, res) => {
   const { code, functionName, test } = req.body;
   const context = {};
